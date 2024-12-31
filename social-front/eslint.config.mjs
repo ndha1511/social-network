@@ -19,7 +19,7 @@ const eslintConfig = [
           ignore: [0, 1, -1],
         },
       ],
-      "no-console": "error",
+      "no-console": ["error", { allow: ["warn", "error"] }],
       "no-restricted-imports": [
         "error",
         {

@@ -3,6 +3,7 @@
 import { createTheme } from "@mui/material/styles";
 import localFont from "next/font/local";
 import { BorderRadius } from "./types";
+import { getFontSize, typography } from "./typography";
 
 const openSans = localFont({
   src: "../assets/fonts/OpenSans.ttf",
@@ -36,6 +37,9 @@ const theme = createTheme({
       },
       defaultProps: {
         variant: "outlined",
+        sx: {
+          ...getFontSize("regularM"),
+        },
       },
     },
     MuiTypography: {
@@ -43,6 +47,9 @@ const theme = createTheme({
         root: {
           fontFamily: openSans.style.fontFamily,
         },
+      },
+      defaultProps: {
+        variant: "regularM",
       },
     },
     MuiTextField: {
@@ -57,6 +64,20 @@ const theme = createTheme({
       defaultProps: {
         size: "small",
         variant: "outlined",
+        slotProps: {
+          input: {
+            sx: {
+              fontFamily: openSans.style.fontFamily,
+              ...getFontSize("regularM"),
+            },
+          },
+          formHelperText: {
+            sx: {
+              fontFamily: openSans.style.fontFamily,
+              ...getFontSize("regularM"),
+            },
+          },
+        },
       },
     },
   },
@@ -87,54 +108,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    textH1: {
-      fontSize: "24px",
-      fontWeight: "bold",
-    },
-    textH2: {
-      fontSize: "20px",
-      fontWeight: "bold",
-    },
-    regularXs: {
-      fontSize: "10px",
-      fontWeight: "regular",
-    },
-    regularS: {
-      fontSize: "12px",
-      fontWeight: "regular",
-    },
-    regularM: {
-      fontSize: "14px",
-      fontWeight: "regular",
-    },
-    regularL: {
-      fontSize: "16px",
-      fontWeight: "regular",
-    },
-    regularXl: {
-      fontSize: "18px",
-      fontWeight: "regular",
-    },
-    boldXs: {
-      fontSize: "10px",
-      fontWeight: "bold",
-    },
-    boldS: {
-      fontSize: "12px",
-      fontWeight: "bold",
-    },
-    boldM: {
-      fontSize: "14px",
-      fontWeight: "bold",
-    },
-    boldL: {
-      fontSize: "16px",
-      fontWeight: "bold",
-    },
-    boldXl: {
-      fontSize: "18px",
-      fontWeight: "bold",
-    },
+    ...typography,
   },
 });
 

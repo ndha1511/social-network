@@ -1,11 +1,11 @@
 "use client";
 
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { FieldErrors, useForm } from "react-hook-form";
 import { useState } from "react";
 import ControlTextField from "@/components/Inputs/ControlTextField";
+import Button from "@/components/Buttons/Button";
 
 const DemoTextFieldForm = () => {
   const [result, setResult] = useState("");

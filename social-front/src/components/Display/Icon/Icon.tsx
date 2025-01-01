@@ -2,7 +2,7 @@
 import MuiIcon from "@mui/material/Icon";
 import { IconProps } from "./types";
 
-const Icon = ({ children, variantIcon = "filled", ...muiProps }: IconProps) => {
+const Icon = ({ icon, variantIcon = "filled", ...muiProps }: IconProps) => {
   const getIconClass = (): string => {
     if (variantIcon === "filled") {
       return "material-icons";
@@ -14,7 +14,7 @@ const Icon = ({ children, variantIcon = "filled", ...muiProps }: IconProps) => {
   };
   return (
     <MuiIcon baseClassName={getIconClass()} {...muiProps}>
-      {children}
+      {icon}
     </MuiIcon>
   );
 };

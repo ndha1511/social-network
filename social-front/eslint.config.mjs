@@ -34,6 +34,21 @@ const eslintConfig = [
               message:
                 "Importing from '@mui/material/TextField' is restricted. Please use '@component/Inputs/TextField'.",
             },
+            {
+              name: "@mui/material/Icon",
+              message:
+                "Importing from '@mui/material/Icon' is restricted. Please use '@component/Display/Icon'.",
+            },
+            {
+              name: "@mui/material/IconButton",
+              message:
+                "Importing from '@mui/material/IconButton' is restricted. Please use '@component/Buttons/IconButton'.",
+            },
+            {
+              name: "@mui/material/Button",
+              message:
+                "Importing from '@mui/material/Button' is restricted. Please use '@component/Buttons/Button'.",
+            },
           ],
         },
       ],

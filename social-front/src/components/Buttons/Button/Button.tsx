@@ -1,8 +1,10 @@
 // eslint-disable-next-line no-restricted-imports
 import MuiButton from "@mui/material/Button";
 import { ButtonProps } from "./types";
+import useSnackbar from "@/components/Notifications/Snackbar/reducer/hooks";
 
 const Button = ({ children, type, onClick, ...muiProps }: ButtonProps) => {
+  const { openDevSnackbar } = useSnackbar();
   return (
     <MuiButton
       type={type}
@@ -12,8 +14,7 @@ const Button = ({ children, type, onClick, ...muiProps }: ButtonProps) => {
           : onClick
             ? onClick
             : () => {
-                // TODO: open snackbar
-                alert("default action");
+                openDevSnackbar();
               }
       }
       {...muiProps}

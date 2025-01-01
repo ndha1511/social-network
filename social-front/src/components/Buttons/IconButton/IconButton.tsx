@@ -2,6 +2,7 @@
 import Icon from "@/components/Display/Icon";
 import MuiIconButton from "@mui/material/IconButton";
 import { IconButtonProps } from "./types";
+import useSnackbar from "@/components/Notifications/Snackbar/reducer/hooks";
 
 const IconButton = ({
   icon,
@@ -9,14 +10,14 @@ const IconButton = ({
   onClick,
   ...muiProps
 }: IconButtonProps) => {
+  const { openDevSnackbar } = useSnackbar();
   return (
     <MuiIconButton
       onClick={
         onClick
           ? onClick
           : () => {
-              // TODO: open snackbar
-              alert("default click");
+              openDevSnackbar();
             }
       }
       {...muiProps}

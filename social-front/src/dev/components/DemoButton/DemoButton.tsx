@@ -3,6 +3,7 @@ import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@/components/Buttons/Button";
+import IconButton from "@/components/Buttons/IconButton";
 
 const DemoButton = () => {
   return (
@@ -78,6 +79,9 @@ const DemoButton = () => {
         <Button variant="text" disabled>
           Text Disabled
         </Button>
+      </Stack>
+      <Stack spacing={2} direction="row">
+        <IconButton icon="add" color="primary" />
       </Stack>
     </Box>
   );

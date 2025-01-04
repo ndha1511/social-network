@@ -4,6 +4,8 @@ import { createTheme } from "@mui/material/styles";
 import localFont from "next/font/local";
 import { BorderRadius } from "./types";
 import { getFontSize, typography } from "./typography";
+import { palette } from "./palette";
+import { shadows } from "./shadow";
 
 const openSans = localFont({
   src: "../assets/fonts/OpenSans.ttf",
@@ -17,7 +19,6 @@ export const getBorderRadius = (size: BorderRadius): number => {
 
 const theme = createTheme({
   breakpoints: {
-    // TODO: config responsive
     values: {
       mobile: 0,
       tablet: 640,
@@ -28,12 +29,17 @@ const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           borderRadius: getBorderRadius(BorderRadius.Full),
-          fontWeight: 500,
           fontFamily: openSans.style.fontFamily,
           textTransform: "none",
-        },
+          "&.MuiButton-contained": {
+            boxShadow: theme.shadows[1],
+            "&:hover": {
+              boxShadow: theme.shadows[2],
+            },
+          },
+        }),
       },
       defaultProps: {
         variant: "outlined",
@@ -80,36 +86,44 @@ const theme = createTheme({
         },
       },
     },
+    MuiAppBar: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          backgroundColor: theme.palette.background.paper,
+          color: theme.palette.text.primary,
+          boxShadow: theme.shadows[1],
+          borderRadius: 0,
+        }),
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          boxShadow: theme.shadows[1],
+          borderRadius: getBorderRadius(BorderRadius.Xl),
+        }),
+      },
+    },
+    MuiSnackbar: {
+      defaultProps: {
+        sx: {
+          "& .MuiPaper-root": {
+            borderRadius: 0.5,
+          },
+        },
+      },
+    },
+    MuiAlert: {
+      defaultProps: {
+        sx: {
+          borderRadius: 0,
+        },
+      },
+    },
   },
-  palette: {
-    primary: {
-      main: "#7C4DFF",
-      dark: "#5837B5",
-    },
-    secondary: {
-      main: "#FB0FFF",
-      dark: "#B20BB5",
-    },
-    warning: {
-      main: "#FF961F",
-      dark: "#E8891C",
-    },
-    success: {
-      main: "#00854E",
-      dark: "#004F2E",
-    },
-    error: {
-      main: "#EA0001",
-      dark: "#c50018",
-    },
-    info: {
-      main: "#4761E6",
-      dark: "#004db2",
-    },
-  },
-  typography: {
-    ...typography,
-  },
+  palette: palette,
+  shadows: shadows,
+  typography: typography,
 });
 
 export default theme;

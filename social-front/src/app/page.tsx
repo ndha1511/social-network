@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/components/Buttons/Button";
+import Button from "@/components/Inputs/Buttons/Button";
 import Box from "@mui/material/Box";
 
 import { useRouter } from "next/navigation";

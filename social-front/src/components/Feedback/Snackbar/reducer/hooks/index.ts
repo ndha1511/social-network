@@ -10,7 +10,12 @@ const useSnackbar = () => {
   const dispatch = useAppDispatch();
 
   const openDevSnackbar = () => {
-    dispatch(openSnackbarReducer({ message: "Features under development" }));
+    dispatch(
+      openSnackbarReducer({
+        message: "Feature under development",
+        severity: "warning",
+      })
+    );
   };
 
   const closeSnackbar = () => {

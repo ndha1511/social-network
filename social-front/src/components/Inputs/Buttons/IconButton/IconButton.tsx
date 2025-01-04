@@ -1,8 +1,9 @@
 /* eslint-disable no-restricted-imports */
-import Icon from "@/components/Display/Icon";
+
 import MuiIconButton from "@mui/material/IconButton";
 import { IconButtonProps } from "./types";
-import useSnackbar from "@/components/Notifications/Snackbar/reducer/hooks";
+import Icon from "@/components/DataDisplay/Icon";
+import useSnackbar from "@/components/Feedback/Snackbar/reducer/hooks";
 
 const IconButton = ({
   icon,

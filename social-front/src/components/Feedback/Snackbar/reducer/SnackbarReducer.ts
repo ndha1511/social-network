@@ -3,6 +3,9 @@ import { SnackbarState } from "./types";
 
 const initialState: SnackbarState = {
   open: false,
+  severity: "warning",
+  vertical: "bottom",
+  horizontal: "left",
 };
 
 export const snackbarSlice = createSlice({

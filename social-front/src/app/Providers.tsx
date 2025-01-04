@@ -6,7 +6,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { ReactNode } from "react";
 import { Provider as ReduxProvider } from "react-redux";
 
-const Provider = ({ children }: { children: ReactNode }) => {
+const Providers = ({ children }: { children: ReactNode }) => {
   return (
     <AppRouterCacheProvider>
       {/* TODO: custom dark mode */}
@@ -17,4 +17,4 @@ const Provider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default Provider;
+export default Providers;

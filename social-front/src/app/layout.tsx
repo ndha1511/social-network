@@ -1,8 +1,9 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Provider from "./provider";
+import Providers from "./Providers";
 import Layout from "@/layouts/Layout";
+import GlobalStyles from "./GlobalStyles";
 
 const openSans = localFont({
   src: "../assets/fonts/OpenSans.ttf",
@@ -35,9 +36,10 @@ export default function RootLayout({
       </head>
       <body className={`${openSans.className}`}>
         <CssBaseline />
-        <Provider>
+        <GlobalStyles />
+        <Providers>
           <Layout>{children}</Layout>
-        </Provider>
+        </Providers>
       </body>
     </html>
   );

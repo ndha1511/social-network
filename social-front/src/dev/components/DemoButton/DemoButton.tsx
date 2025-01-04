@@ -2,8 +2,8 @@
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Button from "@/components/Buttons/Button";
-import IconButton from "@/components/Buttons/IconButton";
+import Button from "@/components/Inputs/Buttons/Button";
+import IconButton from "@/components/Inputs/Buttons/IconButton";
 
 const DemoButton = () => {
   return (

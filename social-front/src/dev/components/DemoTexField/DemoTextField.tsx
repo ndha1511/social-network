@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import TextField from "@/components/Inputs/TextField";
 import SearchIcon from "@mui/icons-material/Search";
+import TextField from "@/components/Inputs/TextFields/TextField";
 
 const DemoTextField = () => {
   return (

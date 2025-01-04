@@ -1,4 +1,4 @@
-import { snackbarSlice } from "@/components/Notifications/Snackbar/reducer/SnackbarReducer";
+import { snackbarSlice } from "@/components/Feedback/Snackbar/reducer/SnackbarReducer";
 import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({

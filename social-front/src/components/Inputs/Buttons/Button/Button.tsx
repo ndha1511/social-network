@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
 import MuiButton from "@mui/material/Button";
 import { ButtonProps } from "./types";
-import useSnackbar from "@/components/Notifications/Snackbar/reducer/hooks";
+import useSnackbar from "@/components/Feedback/Snackbar/reducer/hooks";
 
 const Button = ({ children, type, onClick, ...muiProps }: ButtonProps) => {
   const { openDevSnackbar } = useSnackbar();

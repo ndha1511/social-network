@@ -7,7 +7,6 @@ import Tab from "@mui/material/Tab";
 import { useState } from "react";
 import Icon from "@/components/DataDisplay/Icon";
 import IconButton from "@/components/Inputs/Buttons/IconButton";
-import Search from "@/components/Inputs/TextFields/Search";
 import TopAppBarSearch from "./components/Search";
 
 function a11yProps(index: number) {
@@ -20,7 +19,7 @@ function a11yProps(index: number) {
 const TopAppBar = () => {
   const [value, setValue] = useState(0);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
   return (
@@ -68,7 +67,7 @@ const TopAppBar = () => {
                 }
                 {...a11yProps(1)}
               />
-              <Tab
+              {/* <Tab
                 icon={
                   <Icon
                     icon="video_library"
@@ -87,7 +86,7 @@ const TopAppBar = () => {
                   />
                 }
                 {...a11yProps(3)}
-              />
+              /> */}
             </Tabs>
           </Grid>
           <Grid

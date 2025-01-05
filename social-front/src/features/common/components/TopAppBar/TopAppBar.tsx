@@ -2,12 +2,13 @@ import Toolbar from "@mui/material/Toolbar";
 import AppBar from "@mui/material/AppBar";
 import Grid from "@mui/material/Grid2";
 import Avatar from "@mui/material/Avatar";
-import TextField from "@/components/Inputs/TextFields/TextField";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { useState } from "react";
 import Icon from "@/components/DataDisplay/Icon";
 import IconButton from "@/components/Inputs/Buttons/IconButton";
+import Search from "@/components/Inputs/TextFields/Search";
+import TopAppBarSearch from "./components/Search";
 
 function a11yProps(index: number) {
   return {
@@ -35,12 +36,7 @@ const TopAppBar = () => {
           >
             <Avatar>H</Avatar>
 
-            <TextField
-              placeholder="Nhập để tìm kiếm"
-              sx={{
-                width: 220,
-              }}
-            />
+            <TopAppBarSearch />
           </Grid>
           <Grid size={6} display="flex" justifyContent="center">
             <Tabs

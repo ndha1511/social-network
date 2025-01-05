@@ -8,7 +8,7 @@ import Snackbar from "@/components/Feedback/Snackbar";
 import useWidth from "@/hooks/useWidth";
 
 const Layout = ({ children }: { children: ReactNode }) => {
-  const width = useWidth();
+  const { width } = useWidth();
   return (
     <>
       {width === "mobile" ? (

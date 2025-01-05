@@ -10,7 +10,7 @@ const useWidth = () => {
     theme.breakpoints.between("laptop", "desktop")
   );
 
-  const width = useMemo(() => {
+  const width: "mobile" | "tablet" | "laptop" | "desktop" = useMemo(() => {
     if (isMobile) {
       return "mobile";
     }
@@ -22,7 +22,12 @@ const useWidth = () => {
     }
     return "desktop";
   }, [isMobile, isTablet, isLaptop]);
-  return width;
+
+  const isCompact = useMemo(() => {
+    return ["mobile", "tablet"].includes(width);
+  }, [width]);
+
+  return { width, isCompact };
 };
 
 export default useWidth;

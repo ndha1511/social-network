@@ -27,6 +27,13 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache-dependency-path: social-front/package-lock.json
         cache: 'npm'
+    - name: Navigate to social-front
+      working-directory: social-front
+      run: echo "Moved to social-front directory"
+
     - run: npm install
+      working-directory: social-front
     - run: npm run lint
+      working-directory: social-network/social-front
     - run: npm run build --if-present
+      working-directory: social-network/social-front

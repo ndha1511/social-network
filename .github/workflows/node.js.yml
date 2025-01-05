@@ -27,7 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache-dependency-path: social-front/package-lock.json
         cache: 'npm'
-    - run: npm clean
-    - run: npm install
+    - run: npm ci
     - run: npm run lint
     - run: npm run build --if-present

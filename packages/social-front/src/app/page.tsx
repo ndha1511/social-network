@@ -28,7 +28,7 @@ export default function Home() {
     value2: string;
     value3: string;
   }) => {
-    console.log(value);
+    console.error(value);
   };
 
   const onError = (error: FieldErrors) => {

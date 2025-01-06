@@ -10,7 +10,7 @@ const Providers = ({ children }: { children: ReactNode }) => {
   return (
     <AppRouterCacheProvider>
       {/* TODO: custom dark mode */}
-      <ThemeProvider theme={theme} noSsr defaultMode="system">
+      <ThemeProvider theme={theme} defaultMode="system">
         <ReduxProvider store={store}>{children}</ReduxProvider>
       </ThemeProvider>
     </AppRouterCacheProvider>

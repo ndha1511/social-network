@@ -6,6 +6,7 @@ import { BorderRadius } from "./types";
 import { getFontSize, typography } from "./typography";
 import { palette } from "./palette";
 import { shadows } from "./shadow";
+import { CSSObject } from "styled-components";
 
 const openSans = localFont({
   src: "../assets/fonts/OpenSans.ttf",
@@ -29,17 +30,78 @@ const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        root: ({ theme }) => ({
-          borderRadius: getBorderRadius(BorderRadius.Full),
-          fontFamily: openSans.style.fontFamily,
-          textTransform: "none",
-          "&.MuiButton-contained": {
-            boxShadow: theme.shadows[1],
-            "&:hover": {
-              boxShadow: theme.shadows[2],
+        root: ({ theme, ownerState }) => {
+          const baseStyles: CSSObject = {
+            borderRadius: getBorderRadius(BorderRadius.Full),
+            fontFamily: openSans.style.fontFamily,
+            textTransform: "none",
+            "&.MuiButton-contained": {
+              boxShadow: theme.shadows[1],
+              "&:hover": {
+                boxShadow: theme.shadows[2],
+              },
             },
-          },
-        }),
+          };
+
+          const getColor = (): CSSObject => {
+            switch (ownerState.color) {
+              case "primary":
+                return {
+                  "&:hover": {
+                    backgroundColor: theme.palette.surface1.main,
+                  },
+                };
+              case "secondary":
+                return {
+                  "&:hover": {
+                    backgroundColor: theme.palette.surface2.main,
+                  },
+                };
+              case "warning":
+                return {
+                  "&:hover": {
+                    backgroundColor: theme.palette.surface3.main,
+                  },
+                };
+              case "success": {
+                return {
+                  "&:hover": {
+                    backgroundColor: theme.palette.surface4.main,
+                  },
+                };
+              }
+              case "info": {
+                return {
+                  "&:hover": {
+                    backgroundColor: theme.palette.surface5.main,
+                  },
+                };
+              }
+              case "error": {
+                return {
+                  "&:hover": {
+                    backgroundColor: theme.palette.surface6.main,
+                  },
+                };
+              }
+              default:
+                return {};
+            }
+          };
+
+          const customState = (): CSSObject => {
+            switch (ownerState.variant) {
+              case "outlined":
+                return {
+                  ...getColor(),
+                };
+              default:
+                return {};
+            }
+          };
+
+          return { ...baseStyles, ...customState };
+        },
       },
       defaultProps: {
         variant: "outlined",
@@ -118,6 +180,23 @@ const theme = createTheme({
         sx: {
           borderRadius: 0,
         },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          borderRadius: getBorderRadius(BorderRadius.Xs),
+          "&:hover": {
+            backgroundColor: theme.palette.surface7.main,
+          },
+        }),
+      },
+    },
+    MuiAvatar: {
+      defaultProps: {
+        sx: (theme) => ({
+          backgroundColor: theme.palette.surface7.main,
+        }),
       },
     },
   },

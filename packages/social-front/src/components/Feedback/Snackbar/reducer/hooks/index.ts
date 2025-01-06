@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "@/stores/hooks";
+import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
 import { SnackbarState } from "../types";
 import { openSnackbar as openSnackbarReducer } from "../SnackbarReducer";
 import { closeSnackbar as closeSnackbarReducer } from "../SnackbarReducer";

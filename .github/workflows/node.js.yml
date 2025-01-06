@@ -5,13 +5,16 @@ name: Build Check
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
+    paths:
+      - "packages/social-front/**"
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
+    paths:
+      - "packages/social-front/**"
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,20 +23,20 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache-dependency-path: social-front/package-lock.json
-        cache: 'npm'
-    - name: Navigate to social-front
-      working-directory: social-front
-      run: echo "Moved to social-front directory"
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache-dependency-path: packages/social-front/package-lock.json
+          cache: "npm"
+      - name: Navigate to social-front
+        working-directory: packages/social-front
+        run: echo "Moved to social-front directory"
 
-    - run: npm install
-      working-directory: social-front
-    - run: npm run lint
-      working-directory: social-front
-    - run: npm run build --if-present
-      working-directory: social-front
+      - run: npm install
+        working-directory: packages/social-front
+      - run: npm run lint
+        working-directory: packages/social-front
+      - run: npm run build --if-present
+        working-directory: packages/social-front

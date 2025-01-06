@@ -1,5 +1,5 @@
 "use client";
-import { store } from "@/stores/store";
+import { store } from "@/lib/store";
 import theme from "@/themes/theme";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { ThemeProvider } from "@mui/material/styles";

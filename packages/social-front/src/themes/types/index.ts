@@ -1,3 +1,5 @@
+import { SimplePaletteColorOptions } from "@mui/material/styles";
+
 /* eslint-disable no-magic-numbers */
 declare module "@mui/material/styles" {
   /** Define variant for typography */
@@ -41,6 +43,26 @@ declare module "@mui/material/styles" {
     tablet: true;
     laptop: true;
     desktop: true;
+  }
+
+  interface Palette {
+    surface1: SimplePaletteColorOptions;
+    surface2: SimplePaletteColorOptions;
+    surface3: SimplePaletteColorOptions;
+    surface4: SimplePaletteColorOptions;
+    surface5: SimplePaletteColorOptions;
+    surface6: SimplePaletteColorOptions;
+    surface7: SimplePaletteColorOptions;
+  }
+
+  interface PaletteOptions {
+    surface1?: SimplePaletteColorOptions;
+    surface2?: SimplePaletteColorOptions;
+    surface3?: SimplePaletteColorOptions;
+    surface4?: SimplePaletteColorOptions;
+    surface5?: SimplePaletteColorOptions;
+    surface6?: SimplePaletteColorOptions;
+    surface7?: SimplePaletteColorOptions;
   }
 }
 

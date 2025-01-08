@@ -2,11 +2,11 @@ import { ThemeOptions } from "@mui/material/styles";
 
 export const typography: ThemeOptions["typography"] = {
   textH1: {
-    fontSize: "24px",
+    fontSize: "26px",
     fontWeight: 700,
   },
   textH2: {
-    fontSize: "20px",
+    fontSize: "22px",
     fontWeight: 700,
   },
   regularXs: {
@@ -18,15 +18,15 @@ export const typography: ThemeOptions["typography"] = {
     fontWeight: 400,
   },
   regularM: {
-    fontSize: "14px",
+    fontSize: "15px",
     fontWeight: 400,
   },
   regularL: {
-    fontSize: "16px",
+    fontSize: "17px",
     fontWeight: 400,
   },
   regularXl: {
-    fontSize: "18px",
+    fontSize: "20px",
     fontWeight: 400,
   },
   boldXs: {
@@ -38,15 +38,15 @@ export const typography: ThemeOptions["typography"] = {
     fontWeight: 700,
   },
   boldM: {
-    fontSize: "14px",
+    fontSize: "15px",
     fontWeight: 700,
   },
   boldL: {
-    fontSize: "16px",
+    fontSize: "17px",
     fontWeight: 700,
   },
   boldXl: {
-    fontSize: "18px",
+    fontSize: "20px",
     fontWeight: 700,
   },
 };

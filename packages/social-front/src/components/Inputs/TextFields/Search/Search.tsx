@@ -41,7 +41,7 @@ const Search = ({
       placeholder={placeholder}
       onClick={handleClick}
       sx={{
-        width: 220,
+        width: 240,
       }}
       slotProps={{
         input: {

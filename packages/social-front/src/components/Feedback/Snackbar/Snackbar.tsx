@@ -14,6 +14,10 @@ const Snackbar = ({
       onClose={closeSnackbar}
       open={snackbarState.open}
       autoHideDuration={autoHideDuration}
+      anchorOrigin={{
+        vertical: snackbarState.vertical || "bottom",
+        horizontal: snackbarState.horizontal || "left",
+      }}
       {...muiProps}
     >
       <Alert

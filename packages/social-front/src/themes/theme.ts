@@ -6,8 +6,9 @@ import { BorderRadius } from "./types";
 import { getFontSize, typography } from "./typography";
 import { palette } from "./palette";
 import { shadows } from "./shadow";
+import { CSSObject } from "styled-components";
 
-const openSans = localFont({
+export const openSans = localFont({
   src: "../assets/fonts/OpenSans.ttf",
 });
 
@@ -29,17 +30,74 @@ const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        root: ({ theme }) => ({
-          borderRadius: getBorderRadius(BorderRadius.Full),
-          fontFamily: openSans.style.fontFamily,
-          textTransform: "none",
-          "&.MuiButton-contained": {
-            boxShadow: theme.shadows[1],
-            "&:hover": {
-              boxShadow: theme.shadows[2],
+        root: ({ theme, ownerState }) => {
+          const baseStyles: CSSObject = {
+            borderRadius: getBorderRadius(BorderRadius.Full),
+            fontFamily: openSans.style.fontFamily,
+            textTransform: "none",
+            "&.MuiButton-contained": {
+              boxShadow: theme.shadows[1],
+              "&:hover": {
+                boxShadow: theme.shadows[2],
+              },
             },
-          },
-        }),
+          };
+
+          const getColor = (): CSSObject => {
+            switch (ownerState.color) {
+              case "primary":
+                return {
+                  backgroundColor: theme.palette.surface1.dark,
+                };
+              case "secondary":
+                return {
+                  backgroundColor: theme.palette.surface2.dark,
+                };
+              case "warning":
+                return {
+                  backgroundColor: theme.palette.surface3.dark,
+                };
+              case "success": {
+                return {
+                  backgroundColor: theme.palette.surface4.dark,
+                };
+              }
+              case "info": {
+                return {
+                  backgroundColor: theme.palette.surface5.dark,
+                };
+              }
+              case "error": {
+                return {
+                  backgroundColor: theme.palette.surface6.dark,
+                };
+              }
+              default:
+                return {};
+            }
+          };
+
+          const customState = (): CSSObject => {
+            switch (ownerState.variant) {
+              case "outlined":
+                return {
+                  "&:hover": {
+                    color: theme.palette.common.white,
+                    ...getColor(),
+                  },
+                };
+              case "text":
+                return {};
+              default:
+                return {};
+            }
+          };
+
+          return {
+            ...baseStyles,
+            ...customState(),
+          };
+        },
       },
       defaultProps: {
         variant: "outlined",
@@ -118,6 +176,24 @@ const theme = createTheme({
         sx: {
           borderRadius: 0,
         },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          "&:hover": {
+            backgroundColor: theme.palette.surface1.light,
+          },
+
+          textTransform: "none",
+        }),
+      },
+    },
+    MuiAvatar: {
+      defaultProps: {
+        sx: (theme) => ({
+          backgroundColor: theme.palette.surface7.main,
+        }),
       },
     },
   },

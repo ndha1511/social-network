@@ -29,7 +29,7 @@ const TopAppBarSearch = () => {
               },
             }}
             sx={{
-              width: 220,
+              width: 240,
             }}
           />
         )

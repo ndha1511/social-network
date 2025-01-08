@@ -8,7 +8,7 @@ import { palette } from "./palette";
 import { shadows } from "./shadow";
 import { CSSObject } from "styled-components";
 
-const openSans = localFont({
+export const openSans = localFont({
   src: "../assets/fonts/OpenSans.ttf",
 });
 
@@ -47,41 +47,29 @@ const theme = createTheme({
             switch (ownerState.color) {
               case "primary":
                 return {
-                  "&:hover": {
-                    backgroundColor: theme.palette.surface1.main,
-                  },
+                  backgroundColor: theme.palette.surface1.dark,
                 };
               case "secondary":
                 return {
-                  "&:hover": {
-                    backgroundColor: theme.palette.surface2.main,
-                  },
+                  backgroundColor: theme.palette.surface2.dark,
                 };
               case "warning":
                 return {
-                  "&:hover": {
-                    backgroundColor: theme.palette.surface3.main,
-                  },
+                  backgroundColor: theme.palette.surface3.dark,
                 };
               case "success": {
                 return {
-                  "&:hover": {
-                    backgroundColor: theme.palette.surface4.main,
-                  },
+                  backgroundColor: theme.palette.surface4.dark,
                 };
               }
               case "info": {
                 return {
-                  "&:hover": {
-                    backgroundColor: theme.palette.surface5.main,
-                  },
+                  backgroundColor: theme.palette.surface5.dark,
                 };
               }
               case "error": {
                 return {
-                  "&:hover": {
-                    backgroundColor: theme.palette.surface6.main,
-                  },
+                  backgroundColor: theme.palette.surface6.dark,
                 };
               }
               default:
@@ -93,14 +81,22 @@ const theme = createTheme({
             switch (ownerState.variant) {
               case "outlined":
                 return {
-                  ...getColor(),
+                  "&:hover": {
+                    color: theme.palette.common.white,
+                    ...getColor(),
+                  },
                 };
+              case "text":
+                return {};
               default:
                 return {};
             }
           };
 
-          return { ...baseStyles, ...customState };
+          return {
+            ...baseStyles,
+            ...customState(),
+          };
         },
       },
       defaultProps: {
@@ -185,10 +181,11 @@ const theme = createTheme({
     MuiTab: {
       styleOverrides: {
         root: ({ theme }) => ({
-          borderRadius: getBorderRadius(BorderRadius.Xs),
           "&:hover": {
-            backgroundColor: theme.palette.surface7.main,
+            backgroundColor: theme.palette.surface1.light,
           },
+
+          textTransform: "none",
         }),
       },
     },

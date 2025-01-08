@@ -10,18 +10,17 @@ const FocusSearch = ({ children, open, handleClose }: FocusSearchProps) => {
     <Popover
       open={open}
       onClose={handleClose}
-      disableRestoreFocus
       marginThreshold={0}
       slotProps={{
         paper: {
           sx: {
-            width: 300,
+            width: 330,
             boxShadow: 2,
           },
         },
       }}
     >
-      <Stack direction="row" p={1} pb={1.5} spacing={1} alignItems="center">
+      <Stack direction="row" p={1} spacing={1} alignItems="center">
         <IconButton
           icon="arrow_back"
           onClick={handleClose}

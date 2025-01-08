@@ -27,7 +27,7 @@ export const palette: ThemeOptions["palette"] = {
   },
   surface1: {
     main: "#D6C8FF",
-    dark: "#C3ADFF",
+    dark: "#9671ff",
     light: "#F2EDFF",
   },
   surface2: {

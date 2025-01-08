@@ -1,10 +1,11 @@
-import TopAppBar from "@/features/common/components/TopAppBar";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import { ReactNode } from "react";
-import NavigationRail from "@/features/common/components/NavigationRail/NavigationRail";
+
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
+import TopAppBar from "@/components/Navigation/TopAppBar";
+import NavigationRail from "@/components/Navigation/NavigationRail/NavigationRail";
 
 const ExpandLayout = ({ children }: { children: ReactNode }) => {
   return (

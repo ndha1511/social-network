@@ -1,10 +1,10 @@
 import { Theme } from "@mui/material/styles";
-import { AvatarIconProps } from "../types";
+import { AvatarProps } from "../types";
 
 export const getActiveColorIcon = (
   theme: Theme,
-  variant: AvatarIconProps["variant"],
-  active: AvatarIconProps["active"]
+  variant: AvatarProps["variant"],
+  active: AvatarProps["active"]
 ): string => {
   if (active) {
     switch (variant) {
@@ -27,8 +27,8 @@ export const getActiveColorIcon = (
 
 export const getBgActiveColorAvatar = (
   theme: Theme,
-  variant: AvatarIconProps["variant"],
-  active: AvatarIconProps["active"]
+  variant: AvatarProps["variant"],
+  active: AvatarProps["active"]
 ): string => {
   const defaultColor = theme.palette.surface7.main;
   if (active) {

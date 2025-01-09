@@ -60,4 +60,5 @@ export const palette: ThemeOptions["palette"] = {
     dark: "#DBDDE2",
     light: "#F7F8F9",
   },
+  darkGray: "#212121",
 };

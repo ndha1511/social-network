@@ -4,8 +4,7 @@ import Search from "@/components/Inputs/TextFields/Search";
 import { useState } from "react";
 import Icon from "@/components/DataDisplay/Icon";
 import useWidth from "@/hooks/useWidth";
-import IconButton from "@/components/Inputs/Buttons/IconButton";
-import Avatar from "@mui/material/Avatar";
+import Avatar from "@/components/DataDisplay/Avatar";
 
 const TopAppBarSearch = () => {
   const [open, setOpen] = useState(false);
@@ -15,10 +14,11 @@ const TopAppBarSearch = () => {
     <>
       {!open ? (
         width === "mobile" ? (
-          <Avatar>
-            {" "}
-            <IconButton icon="search" onClick={() => setOpen(true)} />
-          </Avatar>
+          <Avatar
+            avatar="search"
+            type="icon-button"
+            handleClick={() => setOpen(true)}
+          />
         ) : (
           <TextField
             placeholder="Tìm kiếm trong app"

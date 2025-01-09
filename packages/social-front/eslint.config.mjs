@@ -49,6 +49,11 @@ const eslintConfig = [
               message:
                 "Importing from '@mui/material/Button' is restricted. Please use '@component/Inputs/Buttons/Button'.",
             },
+            {
+              name: "@mui/material/Avatar",
+              message:
+                "Importing from '@mui/material/Avatar' is restricted. Please use '@component/Inputs/DataDisplay/Avatar'.",
+            },
           ],
         },
       ],

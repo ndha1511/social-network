@@ -1,51 +1,37 @@
 import Toolbar from "@mui/material/Toolbar";
 import AppBar from "@mui/material/AppBar";
 import Grid from "@mui/material/Grid2";
-import Avatar from "@mui/material/Avatar";
 
-import IconButton from "@/components/Inputs/Buttons/IconButton";
-import TopAppBarSearch from "./components/Search";
-import TabList from "./components/TabList";
+import TopAppBarSearch from "./Search";
+import TabList from "./TabList";
+import GridColumn from "@/components/Layout/GridLayout/GridColumn";
+import ApplicationList from "./ApplicationList";
+import Notifications from "./Notifications";
+import Messages from "./Messages";
+import AccountMenu from "./AccountMenu";
+import Avatar from "@/components/DataDisplay/Avatar";
 
 const TopAppBar = () => {
   return (
     <AppBar>
       <Toolbar>
         <Grid container display="flex" flex={1}>
-          <Grid
-            size={3}
-            display="flex"
-            flexDirection="row"
-            alignItems="center"
-            gap={1}
-          >
-            <Avatar>H</Avatar>
-
+          <GridColumn col={3}>
+            {/* TODO: svg logo */}
+            <Avatar avatar="https://static.vecteezy.com/system/resources/previews/017/047/854/original/cute-cat-illustration-cat-kawaii-chibi-drawing-style-cat-cartoon-vector.jpg" />
             <TopAppBarSearch />
-          </Grid>
-          <Grid size={6} display="flex" justifyContent="center">
+          </GridColumn>
+
+          <GridColumn col={6} justifyContent="center">
             <TabList />
-          </Grid>
-          <Grid
-            size={3}
-            display="flex"
-            justifyContent="flex-end"
-            alignItems="center"
-            gap={1}
-          >
-            <Avatar>
-              <IconButton icon="apps" />
-            </Avatar>
-            <Avatar>
-              <IconButton icon="notifications" />
-            </Avatar>
-            <Avatar>
-              <IconButton icon="forum" />
-            </Avatar>
-            <Avatar>
-              <IconButton icon="account_circle" />
-            </Avatar>
-          </Grid>
+          </GridColumn>
+
+          <GridColumn col={3} justifyContent="flex-end">
+            <ApplicationList />
+            <Messages />
+            <Notifications />
+            <AccountMenu />
+          </GridColumn>
         </Grid>
       </Toolbar>
     </AppBar>

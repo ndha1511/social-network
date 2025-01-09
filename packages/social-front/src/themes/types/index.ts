@@ -53,6 +53,7 @@ declare module "@mui/material/styles" {
     surface5: SimplePaletteColorOptions;
     surface6: SimplePaletteColorOptions;
     surface7: SimplePaletteColorOptions;
+    darkGray: string;
   }
 
   interface PaletteOptions {
@@ -63,6 +64,7 @@ declare module "@mui/material/styles" {
     surface5?: SimplePaletteColorOptions;
     surface6?: SimplePaletteColorOptions;
     surface7?: SimplePaletteColorOptions;
+    darkGray?: string;
   }
 }
 

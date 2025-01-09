@@ -196,6 +196,14 @@ const theme = createTheme({
         }),
       },
     },
+    MuiTooltip: {
+      defaultProps: {
+        sx: (theme) => ({
+          fontSize: theme.typography.regularXl,
+          backgroundColor: "red",
+        }),
+      },
+    },
   },
   palette: palette,
   shadows: shadows,

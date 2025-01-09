@@ -7,7 +7,7 @@ import ExpandLayout from "./ExpandLayout/ExpandLayout";
 import Snackbar from "@/components/Feedback/Snackbar";
 import useWidth from "@/hooks/useWidth";
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const AppLayout = ({ children }: { children: ReactNode }) => {
   const { width } = useWidth();
   return (
     <>
@@ -21,4 +21,4 @@ const Layout = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default Layout;
+export default AppLayout;

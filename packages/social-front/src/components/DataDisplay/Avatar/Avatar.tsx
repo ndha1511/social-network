@@ -19,7 +19,7 @@ const Avatar = ({
   avatar,
 }: AvatarProps) => {
   return (
-    <Tooltip title={tooltip || ""}>
+    <Tooltip title={tooltip}>
       <Badge
         badgeContent={badgeCount}
         color="error"

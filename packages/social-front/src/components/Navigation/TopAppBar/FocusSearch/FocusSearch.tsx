@@ -15,7 +15,6 @@ const FocusSearch = ({ children, open, handleClose }: FocusSearchProps) => {
         paper: {
           sx: {
             width: 330,
-            boxShadow: 2,
           },
         },
       }}

@@ -196,11 +196,21 @@ const theme = createTheme({
         }),
       },
     },
-    MuiTooltip: {
-      defaultProps: {
-        sx: (theme) => ({
-          fontSize: theme.typography.regularXl,
-          backgroundColor: "red",
+    MuiPopover: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          "& .MuiPopover-paper": {
+            boxShadow: theme.shadows[2],
+          },
+        }),
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          "&:hover": {
+            backgroundColor: theme.palette.surface1.light,
+          },
         }),
       },
     },

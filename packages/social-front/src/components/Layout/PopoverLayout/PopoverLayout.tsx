@@ -29,6 +29,7 @@ const PopoverLayout = <T extends "avatar" | "icon" | "button">({
         <Avatar
           tooltip={toolTip}
           handleClick={handleClick}
+          active={open}
           {...(actionProps as AvatarProps)}
         />
       )}

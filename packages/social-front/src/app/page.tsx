@@ -1,6 +1,6 @@
 "use client";
 
-import useSnackbar from "@/components/Feedback/Snackbar/reducer/hooks";
+import useSnackbar from "@/components/Feedback/Snackbar/reducer/hooks/useSnackbar";
 import Button from "@/components/Inputs/Buttons/Button";
 import ControlTextField from "@/components/Inputs/TextFields/ControlTextField";
 

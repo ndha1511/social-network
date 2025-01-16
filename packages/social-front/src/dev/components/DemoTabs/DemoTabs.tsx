@@ -1,4 +1,6 @@
 "use client";
+import MessageLoading from "@/components/Feedback/Loading/MessageLoading/MessageLoading";
+import PostLoading from "@/components/Feedback/Loading/PostLoading/PostLoading";
 import Tabs, { TabLabel } from "@/components/Surfaces/Tabs";
 import useTabs from "@/components/Surfaces/Tabs/hooks";
 import Box from "@mui/material/Box";
@@ -18,6 +20,9 @@ const DemoTabs = () => {
         activeValue={activeTab}
         hiddenIndicator
       />
+
+      <MessageLoading />
+      <PostLoading />
     </Box>
   );
 };

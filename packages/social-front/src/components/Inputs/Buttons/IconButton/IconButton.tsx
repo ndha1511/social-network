@@ -3,7 +3,7 @@
 import MuiIconButton from "@mui/material/IconButton";
 import { IconButtonProps } from "./types";
 import Icon from "@/components/DataDisplay/Icon";
-import useSnackbar from "@/components/Feedback/Snackbar/reducer/hooks";
+import useSnackbar from "@/components/Feedback/Snackbar/reducer/hooks/useSnackbar";
 
 const IconButton = ({
   icon,
